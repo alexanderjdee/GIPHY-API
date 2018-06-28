@@ -1,0 +1,43 @@
+#video-game-form{
+    float: right;
+    margin-right: 100px;
+}
+
+#video-game-form label{
+    font-weight: bolder;
+}
+
+button{
+    background:rgba(12, 136, 105, 0.541);
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 2px 10px 2px 10px;
+}
+
+#video-game-form label,
+#video-game-form input,
+#video-game-form button{
+    margin: 5px;
+}
+
+
+#video-game-input{
+    width: 300px;
+    height: 25px;
+}
+
+#video-games{
+    margin-right: 500px;
+}
+
+.video-game-gif{
+    float: left;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 970px){
+    #video-game-form{
+        float: none;
+    }
+}
