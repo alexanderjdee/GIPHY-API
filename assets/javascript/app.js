@@ -3,6 +3,8 @@ var topics = ["Dark Souls", "Uncharted", "Halo", "Super Smash Bros", "Legend of 
 var gifs = [];
 
 //FUNCTIONS
+
+//Render the buttons for each video game in the topics array
 function renderButtons(){
     $("#video-game-buttons").html("");
     
@@ -15,6 +17,7 @@ function renderButtons(){
     });
 }
 
+//Render the gifs that are returned by the GIPHY API call
 function renderGIFs(){
     var videoGame = $(this).attr("data-name") + " video game";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + videoGame + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -27,7 +30,6 @@ function renderGIFs(){
     }).then(function(response){
 
         var results = response.data;
-        console.log(results);
 
         $.each(results, function(index){
             gifs.push(results[index]);
@@ -49,6 +51,7 @@ function renderGIFs(){
     });
 }
 
+//Change a gif from playing to paused
 function changeState(){
     if($(this).attr("data-state") == "still"){
         var index = Number($(this).attr("data-index"));
@@ -66,6 +69,7 @@ function changeState(){
 //APPLICATION
 $(document).ready(function(){
     
+    //add a new video game button to the topics array, and re-render the buttons
     $("#add-video-game").on("click", function(event){
         event.preventDefault();
 
